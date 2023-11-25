@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Road Rater</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="logout">
+        <button id="logoutButton">Log Out</button>
+    </div>
+
+    <div id="Main">
+        <h1>
+            <bold> ROAD RATER </bold>
+        </h1>
+        <h2>
+            <bold> Rate the drivers between 0 and 5 </bold>
+        </h2>
+        <h2>
+            <form action="/submit" method="post">
+                <label for="dateValue">Enter Date:</label>
+                <input type="date" name="dateValue" id="dateValue">
+                <br>
+
+                <label for="rateValue">Enter Rate:</label>
+                <input type="number" name="rateValue" id="rateValue">
+                <br>
+
+                <label for="plateValue">Enter Plate:</label>
+                <input type="text" name="plateValue" id="plateValue">
+                <br>
+                <br> <!-- Adds extra room for comments box -->
+
+                <label for="commentsValue">Enter Comments:</label>
+                <textarea name="commentsValue" id="commentsValue" rows="2"></textarea>
+                <br>
+
+                <!--Import media button -->
+                <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
+                <button id="Media">Import Media</button>
+
+                <!-- <input id="Submit" type="submit" value="Submit"> -->
+                <button id="Submit">Submit</button>
+                <br>
+            </form>
+        </h2>
+    </div>
+
+    <!-- <div class="dropdown">
+        <p id="history">History</p>
+        <div class="arrowSelect">
+            &#8681;
+        </div>
+        <div id="arrayData" class="dropdown-content">
+            <p> It's lonely here 🥺 </p>
+        </div>
+    </div> -->
+
+    <div id="searchDiv">
+        <input id="searchInput" type="search" placeholder="Search for User Name">
+        <button id="searchClose"> ❌ </button>
+        <button id="searchButton" name="searchButton">Search</button>
+
+        <div id="searchResults" class="searchdropdown">
+            <% if (locals.formattedResults && locals.formattedResults.length> 0) { %>
+                <% formattedResults.forEach(result=> { %>
+                    <div class="searchResult">
+                        <p>User Name: <%= result.UserName %>
+                        </p>
+                        <p>Date: <%= result.dateValue %>
+                        </p>
+                        <p>Rate: <%= result.rateValue %>
+                        </p>
+                        <p>Plate: <%= result.plateValue %>
+                        </p>
+                        <p>Comments: <%= result.commentsValue %>
+                        </p>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>No results found.</p>
+                            <% } %>
+        </div>
+
+    </div>
+
+    <div id="submittedText" class="hiddenDiv">
+        <h2>
+            <p>Thanks for filling out the form. We will add this to the collection</p>
+            <p>See what others are saying by using the search bar</p>
+        </h2>
+    </div>
+
+    <div>
+        <img id="GeicoAd" src="/images/GeicoAd.jpg" alt="Geico Ad">
+    </div>
+
+    <footer id="footer">
+        <a href="https://www.github.com/richardmarrujo" target="_blank">Click here for more from Richard Marrujo</a>
+    </footer>
+</body>
+<script src="index.js"></script>
+
+</html>
